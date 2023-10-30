@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update Java runtime ",
+      "fileMatch": ["^some-file.txt"],
+      "matchStrings": ["java-version: jdk-(?<currentValue>.*?)"],
+      "depNameTemplate": "java",
+      "datasourceTemplate": "java-version",
+      "packageNameTemplate": "java-jre"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["java-version"],
+      "versioning": "regex:^(?<major>\\d+)?(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?([\\._+](?<build>.+))?(-(?<compatibility>.*))?$"
+    }
+  ]
+}
