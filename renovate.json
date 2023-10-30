@@ -5,8 +5,8 @@
     {
       "customType": "regex",
       "description": "Update Java runtime ",
-      "fileMatch": ["^some-file.txt"],
-      "matchStrings": ["java-version: jdk-(?<currentValue>.*?)"],
+      "fileMatch": ["^some-file.xml"],
+      "matchStrings": ["jdkProviderId=\"Adoptium\" release=\"17/jdk-(?<currentValue>.*?)\""],
       "depNameTemplate": "java",
       "datasourceTemplate": "java-version",
       "packageNameTemplate": "java-jre"
